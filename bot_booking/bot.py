@@ -20,7 +20,7 @@ quantization_config = BitsAndBytesConfig(load_in_4bit=True,
 # Load tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained(cfg["checkpoint"])
 model = AutoModelForCausalLM.from_pretrained(model_path, quantization_config=quantization_config)
-pipe = pipeline("text-generation", model, tokenizer=tokenizer, max_new_tokens=300, temperature=0.1, do_sample = False)
+pipe = pipeline("text-generation", model, tokenizer=tokenizer, max_new_tokens=300, temperature=0.1, do_sample=False)
 
 # Limit for chat history
 history_limit = 500
